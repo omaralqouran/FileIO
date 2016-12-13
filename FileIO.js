@@ -1,7 +1,7 @@
 /**
 *   @author Al-Qouran, Omar (omaralqouran48@gmail.com)
 *   @version 0.0.1
-*   @summary Project 4 || created: 12/3/16
+*   @summary File IO || created: 12/3/16
 *   @todo
 */
 
@@ -60,7 +60,7 @@ function setCardHolderName() {
 
 function setCardNumber() {
     while (typeof cardNumber === 'undefined' || isNaN(cardNumber) || cardNumber != customerInfo[cardHolderNum][CARD_NUM]) {
-        cardNumber = PROMPT.question(`\n\tPlease enter the card number associated with your account: `);
+        cardNumber = PROMPT.question(`\n\tPlease enter the card number your card number: `);
     }
 }
 
@@ -79,7 +79,7 @@ function setWhichTask() {
 
 function setWithdrawMoney() {
     let withdrawChoice;
-    withdrawChoice = PROMPT.question(`\n\tWould you like to withdraw funds from your checking account(press 1) or savings account(press 2)? `);
+    withdrawChoice = PROMPT.question(`\n\tWould you like to withdraw funds from your checking account(please enter 1) or savings account(please enter 2)? `);
     if (withdrawChoice == 1) {
         console.log(`\nchecking Balance = \$${customerInfo[cardHolderNum][CHECKING_BAL]}`);
         while (withdrawMoney == 0 || withdrawMoney > customerInfo[cardHolderNum][CHECKING_BAL]) {
@@ -103,7 +103,7 @@ function setWithdrawMoney() {
 
 function setDepositMoney() {
     let depositChoice;
-    depositChoice = PROMPT.question(`\n\tWould you like to deposit funds into your checking account(press 1) or savings account(press 2)? `);
+    depositChoice = PROMPT.question(`\n\tWould you like to deposit funds into your checking account(please enter 1) or savings account(please enter 2)? `);
     if (depositChoice == 1) {
         console.log(`\nChecking Balance = \$${customerInfo[cardHolderNum][CHECKING_BAL]}`);
         depositMoney = Number(PROMPT.question(`How much money would you like to deposit? `));
@@ -114,14 +114,14 @@ function setDepositMoney() {
         console.log(`\nSavings = \$${customerInfo[cardHolderNum][SAVING_BAL]}`);
         depositMoney = Number(PROMPT.question(`How much money would you like to deposit? `));
         customerInfo[cardHolderNum][SAVING_BAL] = Number(customerInfo[cardHolderNum][SAVING_BAL]) + depositMoney;
-        console.log(`New savings balance is \$${customerInfo[cardHolderNum][SAVING_BAL]}`);
+        console.log(`Your new savings balance is \$${customerInfo[cardHolderNum][SAVING_BAL]}`);
         whichTask = null;
     }
 }
 
 function setTransferFunds() {
     let transferFrom;
-    transferFrom = PROMPT.question(`\n\tWould you like to transfer funds FROM your checking account(press 1) or savings account(press 2)? `);
+    transferFrom = PROMPT.question(`\n\tWould you like to transfer funds from your checking account(please enter 1) or savings account(please enter 2)? `);
     if (transferFrom == 1) {
         console.log(`\nChecking Balance = \$${customerInfo[cardHolderNum][CHECKING_BAL]}`);
         console.log(`\nSavings Balance = \$${customerInfo[cardHolderNum][SAVING_BAL]}`);
